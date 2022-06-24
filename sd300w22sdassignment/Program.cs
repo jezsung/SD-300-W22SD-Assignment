@@ -156,19 +156,19 @@ class Game
         switch (selectedKey)
         {
             case "a":
-                Hero.EquippedWeapon = WeaponList.Stick;
+                Hero.EquipWeapon(WeaponList.Stick);
                 break;
             case "b":
-                Hero.EquippedWeapon = WeaponList.Sword;
+                Hero.EquipWeapon(WeaponList.Sword);
                 break;
             case "c":
-                Hero.EquippedWeapon = WeaponList.Knife;
+                Hero.EquipWeapon(WeaponList.Knife);
                 break;
             case "d":
-                Hero.EquippedWeapon = WeaponList.Spear;
+                Hero.EquipWeapon(WeaponList.Spear);
                 break;
             case "e":
-                Hero.EquippedWeapon = WeaponList.Boomerang;
+                Hero.EquipWeapon(WeaponList.Boomerang);
                 break;
             case "f":
                 break;
@@ -197,19 +197,19 @@ class Game
         switch (selectedKey)
         {
             case "a":
-                Hero.EquippedArmour = ArmourList.Cloak;
+                Hero.EquipArmour(ArmourList.Cloak);
                 break;
             case "b":
-                Hero.EquippedArmour = ArmourList.Gloves;
+                Hero.EquipArmour(ArmourList.Gloves);
                 break;
             case "c":
-                Hero.EquippedArmour = ArmourList.Boots;
+                Hero.EquipArmour(ArmourList.Boots);
                 break;
             case "d":
-                Hero.EquippedArmour = ArmourList.Pants;
+                Hero.EquipArmour(ArmourList.Pants);
                 break;
             case "e":
-                Hero.EquippedArmour = ArmourList.Mask;
+                Hero.EquipArmour(ArmourList.Mask);
                 break;
             case "f":
                 break;
