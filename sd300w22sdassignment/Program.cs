@@ -28,6 +28,9 @@ class Game
         AvilableMonsters = monsters;
     }
 
+    /*
+     * Starts the game.
+     */
     public void Start()
     {
         AskName();
@@ -37,6 +40,9 @@ class Game
         }
     }
 
+    /*
+     * Asks the player for a player name.
+     */
     public void AskName()
     {
         string name;
@@ -51,6 +57,9 @@ class Game
         PlayerName = name;
     }
 
+    /*
+     * Displays the main menu and allows the player to select different options.
+     */
     public void DisplayMainMenu()
     {
         string selectedKey;
@@ -80,6 +89,9 @@ class Game
         }
     }
 
+    /*
+     * Displays the main menu and allows the player to select different options.
+     */
     public void DisplayStatistics()
     {
         Console.WriteLine("==================================================");
@@ -91,6 +103,9 @@ class Game
         Console.WriteLine("==================================================\n");
     }
 
+    /*
+     * Displays the options that allows the player to change the weapon or armour.
+     */
     public void DisplayInventory()
     {
         string selectedKey;
@@ -119,6 +134,9 @@ class Game
         }
     }
 
+    /*
+     * Displays available weapons and allows the player to change it to a new one.
+     */
     public void ChangeWeapon()
     {
         string selectedKey;
@@ -157,6 +175,9 @@ class Game
         }
     }
 
+    /*
+     * Displays available armours and allows the player to change it to a new one.
+     */
     public void ChangeArmour()
     {
         string selectedKey;
@@ -195,6 +216,11 @@ class Game
         }
     }
 
+    /*
+     * Starts a fight. The player and the monster take each turn and logs the damage
+     * each of them gives to the other along with the current health.
+     * It counts the number of game, win, and loss.
+     */
     public void Fight()
     {
         if (AvilableMonsters.Count == 0)
@@ -253,6 +279,11 @@ class Fight
         Monster = monster;
     }
 
+
+    /*
+     * Calculates the damage the hero gives to the monster. Subtracts the damage from
+     * the monster's current health.
+     */
     public void HeroTurn()
     {
         int damage = Math.Max(Hero.BaseStrength + Hero.EquippedWeapon.Power - Monster.Defense, 0);
@@ -264,6 +295,10 @@ class Fight
             );
     }
 
+    /*
+     * Calculates the damage the monster gives to the hero. Subtracts the damage from
+     * the hero's current health.
+     */
     public void MonsterTurn()
     {
         int damage = Math.Max(Monster.Strength - (Hero.BaseDefence + Hero.EquippedArmour.Power), 0);
@@ -275,11 +310,17 @@ class Fight
             );
     }
 
+    /*
+     * Checks if the monster's current health has reached zero.
+     */
     public bool Win()
     {
         return Monster.CurrentHealth <= 0;
     }
 
+    /*
+     * Checks if the hero's current health has reached zero.
+     */
     public bool Lose()
     {
         return Hero.CurrentHealth <= 0;
@@ -307,6 +348,9 @@ class Hero
         EquippedArmour = armour;
     }
 
+    /*
+     * Logs hero's information.
+     */
     public void ShowStats()
     {
         Console.WriteLine(
@@ -318,6 +362,9 @@ class Hero
             );
     }
 
+    /*
+     * Logs what weapon and armour the hero equipped.
+     */
     public void ShowInventory()
     {
         Console.WriteLine(
@@ -326,11 +373,17 @@ class Hero
             );
     }
 
+    /*
+     * Changes the equipped weapon to a new weapon.
+     */
     public void EquipWeapon(Weapon newWeapon)
     {
         EquippedWeapon = newWeapon;
     }
 
+    /*
+     * Changes the equipped armour to a new armour.
+     */
     public void EquipArmour(Armour newArmour)
     {
         EquippedArmour = newArmour;
